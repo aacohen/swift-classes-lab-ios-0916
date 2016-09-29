@@ -16,9 +16,9 @@ class Thermometer {
     var fahrenheit: Double
     var celsius: Double {
         get {
-        return (fahrenheit-32) / (5/9)
+        return (fahrenheit-32) * (5/9)
         }
-        set { fahrenheit = celsius * (5/9) + 32 }
+        set { fahrenheit = newValue * (9/5) + 32 }
     }
     var description: String{
         get{
@@ -34,6 +34,12 @@ class Thermometer {
         print(celsius)
     }
 }
+
+let newYorkTherm = Thermometer(temperature: 66)
+print(newYorkTherm.celsius)
+newYorkTherm.celsius = 20
+print(newYorkTherm.fahrenheit)
+let losAngelesTherm = Thermometer(temperature: 80)
 
 /*: section2
  
